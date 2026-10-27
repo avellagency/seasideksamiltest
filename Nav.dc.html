@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<nav data-ss-nav style="position:fixed;top:14px;left:12px;right:12px;margin:0 auto;max-width:1180px;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:7px 7px 7px 24px;border-radius:999px;background:rgba(244,241,234,.66);backdrop-filter:blur(18px) saturate(1.5);-webkit-backdrop-filter:blur(18px) saturate(1.5);border:1px solid rgba(14,26,36,.08);box-shadow:0 12px 40px rgba(12,24,32,.08);font-family:'Inter Tight',sans-serif;color:#0E1A24">
+  <a href="index.html" style="font-family:'Instrument Serif',serif;font-size:25px;line-height:1;letter-spacing:-.01em;color:#0E1A24;text-decoration:none;display:flex;gap:6px;align-items:baseline">Seaside<em style="color:#0F4C6E">Ksamil</em></a>
+  <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
+    <div style="display:flex;align-items:center;gap:30px;font-size:14px;letter-spacing:.01em">
+      <a href="apartment.html" style="position:relative;color:#0E1A24;text-decoration:none"><span data-en="The Studio">Studioja</span><sc-if value="{{ isApartment }}"><span style="position:absolute;left:50%;bottom:-9px;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:#C2A273"></span></sc-if></a>
+      <a href="location.html" style="position:relative;color:#0E1A24;text-decoration:none"><span data-en="Location">Vendndodhja</span><sc-if value="{{ isLocation }}"><span style="position:absolute;left:50%;bottom:-9px;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:#C2A273"></span></sc-if></a>
+      <a href="gallery.html" style="position:relative;color:#0E1A24;text-decoration:none"><span data-en="Gallery">Galeria</span><sc-if value="{{ isGallery }}"><span style="position:absolute;left:50%;bottom:-9px;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:#C2A273"></span></sc-if></a>
+      <a href="book.html" style="position:relative;color:#0E1A24;text-decoration:none"><span data-en="Book">Rezervo</span><sc-if value="{{ isBook }}"><span style="position:absolute;left:50%;bottom:-9px;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:#C2A273"></span></sc-if></a>
+    </div>
+  </sc-if>
+  <div style="display:flex;align-items:center;gap:14px">
+    <div style="display:flex;align-items:center;gap:4px;font-size:12px;font-weight:500;letter-spacing:.12em">
+      <button data-lang="sq" style="border:0;background:none;padding:6px 4px;font:inherit;letter-spacing:inherit;color:#0E1A24;cursor:pointer">SQ</button>
+      <span style="opacity:.3">/</span>
+      <button data-lang="en" style="border:0;background:none;padding:6px 4px;font:inherit;letter-spacing:inherit;color:#0E1A24;cursor:pointer">EN</button>
+    </div>
+    <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
+      <a href="book.html" data-magnetic style="position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:12px;padding:6px 6px 6px 20px;border-radius:999px;background:#0E1A24;color:#F4F1EA;font-size:14px;font-weight:500;text-decoration:none"><span data-en="Book your stay">Rezervo qëndrimin</span><span data-arrow style="width:34px;height:34px;border-radius:50%;background:#C2A273;color:#0E1A24;display:grid;place-items:center;overflow:hidden"><span>→</span></span><span data-shine style="position:absolute;top:0;bottom:0;left:-70%;width:50%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.28),transparent);pointer-events:none"></span></a>
+    </sc-if>
+    <sc-if value="{{ mobile }}" hint-placeholder-val="{{ false }}">
+      <button onClick="{{ toggle }}" aria-label="Menu" style="width:46px;height:46px;border-radius:50%;border:0;background:#0E1A24;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer">
+        <span style="width:18px;height:1.5px;background:#F4F1EA"></span>
+        <span style="width:18px;height:1.5px;background:#F4F1EA"></span>
+      </button>
+    </sc-if>
+  </div>
+</nav>
+<sc-if value="{{ open }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;inset:0;z-index:80;background:#0C1820;color:#F4F1EA;display:flex;flex-direction:column;padding:24px 24px 40px;font-family:'Inter Tight',sans-serif">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <span style="font-family:'Instrument Serif',serif;font-size:25px">Seaside <em style="color:#C2A273">Ksamil</em></span>
+      <button onClick="{{ close }}" aria-label="Close" style="width:46px;height:46px;border-radius:50%;border:1px solid rgba(244,241,234,.2);background:none;color:#F4F1EA;font-size:22px;cursor:pointer">×</button>
+    </div>
+    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:6px;font-family:'Instrument Serif',serif;font-size:clamp(48px,13vw,84px);line-height:1.05">
+      <div style="overflow:hidden"><a data-menu-link href="index.html" style="display:block;color:#F4F1EA;text-decoration:none" data-en="Home">Kreu</a></div>
+      <div style="overflow:hidden"><a data-menu-link href="apartment.html" style="display:block;color:#F4F1EA;text-decoration:none" data-en="The Studio">Studioja</a></div>
+      <div style="overflow:hidden"><a data-menu-link href="location.html" style="display:block;color:#F4F1EA;text-decoration:none" data-en="Location">Vendndodhja</a></div>
+      <div style="overflow:hidden"><a data-menu-link href="gallery.html" style="display:block;color:#F4F1EA;text-decoration:none" data-en="Gallery">Galeria</a></div>
+      <div style="overflow:hidden"><a data-menu-link href="book.html" style="display:block;color:#C2A273;text-decoration:none;font-style:italic" data-en="Book your stay">Rezervo qëndrimin</a></div>
+    </div>
+    <div style="font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.6">Ksamil · Sarandë · Shqipëri</div>
+  </div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;index&quot;,&quot;apartment&quot;,&quot;location&quot;,&quot;gallery&quot;,&quot;book&quot;],&quot;default&quot;:&quot;index&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { desktop: window.innerWidth >= 900, open: false };
+  componentDidMount() { this.onR = () => this.setState({ desktop: window.innerWidth >= 900 }); window.addEventListener('resize', this.onR); }
+  componentWillUnmount() { window.removeEventListener('resize', this.onR); }
+  componentDidUpdate(_, p) {
+    const SS = window.SS;
+    if (this.state.open && !p.open) {
+      SS && SS.lenis && SS.lenis.stop();
+      if (window.gsap) requestAnimationFrame(() => gsap.fromTo('[data-menu-link]', { yPercent: 110 }, { yPercent: 0, duration: 1.1, stagger: 0.08, ease: 'expo.out' }));
+    }
+    if (!this.state.open && p.open) SS && SS.lenis && SS.lenis.start();
+  }
+  renderVals() {
+    const a = this.props.active || 'index';
+    return {
+      desktop: this.state.desktop, mobile: !this.state.desktop, open: this.state.open,
+      isApartment: a === 'apartment', isLocation: a === 'location', isGallery: a === 'gallery', isBook: a === 'book',
+      toggle: () => this.setState((s) => ({ open: !s.open })), close: () => this.setState({ open: false }),
+    };
+  }
+}
+</script>
+</body>
+</html>

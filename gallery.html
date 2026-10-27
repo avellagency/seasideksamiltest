@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+<meta charset="utf-8">
+<title>Galeria · Seaside Ksamil</title>
+<meta name="description" content="Fotografi të studios, terasës dhe pamjes nga deti në Ksamil, Riviera Shqiptare.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://USERNAME.github.io/seaside-ksamil/gallery.html">
+<meta name="theme-color" content="#0C1820">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Seaside Ksamil">
+<meta property="og:locale" content="sq_AL">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="Galeria · Seaside Ksamil">
+<meta property="og:description" content="Fotografi të studios, terasës dhe pamjes nga deti në Ksamil, Riviera Shqiptare.">
+<meta property="og:url" content="https://USERNAME.github.io/seaside-ksamil/gallery.html">
+<meta property="og:image" content="https://USERNAME.github.io/seaside-ksamil/img/studio-sofa.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Galeria · Seaside Ksamil">
+<meta name="twitter:description" content="Fotografi të studios, terasës dhe pamjes nga deti në Ksamil, Riviera Shqiptare.">
+<meta name="twitter:image" content="https://USERNAME.github.io/seaside-ksamil/img/studio-sofa.jpg">
+<meta name="geo.region" content="AL-12">
+<meta name="geo.placename" content="Ksamil">
+<meta name="geo.position" content="39.7624967;19.9894891">
+<meta name="ICBM" content="39.7624967, 19.9894891">
+<link rel="preload" as="image" href="img/studio-sofa.jpg">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter+Tight:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<style>html,body{margin:0;background:#F4F1EA;color:#0E1A24;-webkit-font-smoothing:antialiased}*{box-sizing:border-box}img{display:block}a{color:#0E1A24}a:hover{color:#0F4C6E}::selection{background:#0F4C6E;color:#F4F1EA}html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!important}</style>
+<script src="site.js"></script>
+</helmet>
+<div data-page="gallery" style="background:#F4F1EA;color:#0E1A24;font-family:'Inter Tight',sans-serif;overflow-x:clip">
+  <dc-import name="Nav" active="gallery" hint-size="100%,0px"></dc-import>
+
+  <section data-hero data-screen-label="Hero" style="max-width:1440px;margin:0 auto;padding:clamp(150px,18vw,220px) clamp(20px,4vw,56px) 48px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:32px">
+    <h1 data-split style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(72px,13vw,220px);line-height:.88;letter-spacing:-.03em;margin:0"><em style="color:#0F4C6E" data-en="Gallery">Galeria</em></h1>
+    <div data-hero-fade style="display:flex;flex-wrap:wrap;gap:6px;padding:6px;border-radius:999px;background:#FBF9F4;border:1px solid rgba(0,0,0,.08)">
+      <sc-for list="{{ filters }}" as="f" hint-placeholder-count="4">
+        <button onClick="{{ f.pick }}" style="border:0;border-radius:999px;padding:12px 20px;font:500 14px 'Inter Tight',sans-serif;cursor:pointer;background:{{ f.bg }};color:{{ f.color }};transition:background .5s,color .5s">{{ f.label }}</button>
+      </sc-for>
+    </div>
+  </section>
+
+  <section data-screen-label="Grid" style="max-width:1440px;margin:0 auto;padding:0 clamp(20px,4vw,56px) clamp(120px,14vw,200px)">
+    <div style="columns:3 300px;column-gap:16px">
+      <sc-for list="{{ items }}" as="it" hint-placeholder-count="11">
+        <figure data-g="{{ it.id }}" data-clip data-cursor="view" onClick="{{ it.open }}" style="display:{{ it.display }};break-inside:avoid;margin:0 0 16px;position:relative;border-radius:24px;overflow:hidden;cursor:pointer;background:#E8E3D8;aspect-ratio:{{ it.ratio }}">
+          <img data-parallax src="{{ it.src }}" alt="{{ it.alt }}" loading="lazy" style="position:absolute;left:0;top:-8%;width:100%;height:116%;object-fit:cover">
+        </figure>
+      </sc-for>
+    </div>
+  </section>
+
+  <sc-if value="{{ lbOpen }}" hint-placeholder-val="{{ false }}">
+    <div ref="{{ lbRef }}" onTouchStart="{{ touchStart }}" onTouchEnd="{{ touchEnd }}" style="position:fixed;inset:0;z-index:200;background:rgba(12,24,32,.97);color:#F4F1EA;display:flex;flex-direction:column;padding:20px clamp(16px,3vw,40px)">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:16px">
+        <span style="font-family:'Instrument Serif',serif;font-size:28px;font-variant-numeric:tabular-nums">{{ counter }}</span>
+        <span style="font-size:14px;color:rgba(244,241,234,.7)">{{ lbAlt }}</span>
+        <button onClick="{{ close }}" aria-label="Close" style="width:48px;height:48px;border-radius:50%;border:1px solid rgba(244,241,234,.2);background:none;color:#F4F1EA;font-size:22px;cursor:pointer">×</button>
+      </div>
+      <div style="flex:1;min-height:0;display:flex;align-items:center;justify-content:center;gap:16px;padding:20px 0">
+        <button onClick="{{ prev }}" aria-label="Previous" style="flex:none;width:56px;height:56px;border-radius:50%;border:1px solid rgba(244,241,234,.2);background:none;color:#F4F1EA;font-size:20px;cursor:pointer">←</button>
+        <img ref="{{ imgRef }}" src="{{ lbSrc }}" alt="{{ lbAlt }}" style="max-width:min(100%,1100px);max-height:100%;min-width:0;object-fit:contain;border-radius:18px">
+        <button onClick="{{ next }}" aria-label="Next" style="flex:none;width:56px;height:56px;border-radius:50%;border:1px solid rgba(244,241,234,.2);background:none;color:#F4F1EA;font-size:20px;cursor:pointer">→</button>
+      </div>
+    </div>
+  </sc-if>
+
+  <dc-import name="Footer" hint-size="100%,700px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const EN = (localStorage.getItem('ss-lang') || 'sq') === 'en';
+const t = (sq, en) => (EN ? en : sq);
+const IMAGES = [
+  ['view-town', 'views terrace', 'Pamje nga terasa drejt Ksamilit', 'View from the terrace over Ksamil', '4/5'],
+  ['studio-wide', 'interior', 'Studioja', 'The studio', '4/5'],
+  ['studio-door', 'interior terrace', 'Dera drejt terasës', 'Door to the terrace', '9/10'],
+  ['kitchenette', 'interior', 'Kuzhina', 'Kitchen', '4/5'],
+  ['view-hills', 'views terrace', 'Kodrat dhe deti', 'The hills and the sea', '5/6'],
+  ['studio-sofa', 'interior', 'Dhoma me divan', 'Room with sofa', '3/4'],
+  ['shower', 'interior', 'Dushi', 'Shower', '4/5'],
+  ['studio-kitchen', 'interior', 'Shtrati dhe kuzhina', 'Bed and kitchen', '1/1'],
+  ['bath-sink', 'interior', 'Banjo', 'Bathroom', '4/5'],
+  ['studio-angle', 'interior', 'Dhoma e gjumit', 'Bedroom', '5/6'],
+  ['hallway', 'interior', 'Lavanderia', 'Laundry', '4/5'],
+];
+class Component extends DCLogic {
+  state = { filter: 'all', lb: null };
+  lbRef = React.createRef();
+  imgRef = React.createRef();
+  componentDidMount() {
+    this.onKey = (e) => {
+      if (this.state.lb == null) return;
+      if (e.key === 'Escape') this.close();
+      if (e.key === 'ArrowRight') this.step(1);
+      if (e.key === 'ArrowLeft') this.step(-1);
+    };
+    window.addEventListener('keydown', this.onKey);
+  }
+  componentWillUnmount() { window.removeEventListener('keydown', this.onKey); }
+  componentDidUpdate(_, p) {
+    const g = window.gsap;
+    if (!g) return;
+    if (p.lb == null && this.state.lb != null && this.lbRef.current) g.fromTo(this.lbRef.current, { opacity: 0 }, { opacity: 1, duration: 0.6 });
+    if (this.state.lb != null && p.lb !== this.state.lb && this.imgRef.current) g.fromTo(this.imgRef.current, { opacity: 0, scale: 0.96 }, { opacity: 1, scale: 1, duration: 0.8, ease: 'expo.out' });
+  }
+  visible() { return IMAGES.map((x, i) => i).filter((i) => this.state.filter === 'all' || IMAGES[i][1].includes(this.state.filter)); }
+  setFilter(f) {
+    if (f === this.state.filter) return;
+    const Flip = window.Flip, g = window.gsap;
+    const st = Flip && Flip.getState('[data-g]');
+    this.setState({ filter: f }, () => {
+      if (!st) return;
+      Flip.from(st, { duration: 0.9, ease: 'power3.out', absolute: true, scale: true,
+        onEnter: (els) => g.fromTo(els, { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.8 }),
+        onLeave: (els) => g.to(els, { opacity: 0, scale: 0.9, duration: 0.5 }),
+        onComplete: () => window.ScrollTrigger && ScrollTrigger.refresh() });
+    });
+  }
+  open(i) { this.setState({ lb: i }); window.SS && SS.lenis && SS.lenis.stop(); }
+  close() { this.setState({ lb: null }); window.SS && SS.lenis && SS.lenis.start(); }
+  step(d) { const v = this.visible(), k = v.indexOf(this.state.lb); this.setState({ lb: v[(k + d + v.length) % v.length] }); }
+  renderVals() {
+    const { filter, lb } = this.state, vis = this.visible(), pad = (n) => String(n).padStart(2, '0');
+    const F = [['all', 'Të gjitha', 'All'], ['interior', 'Interier', 'Interior'], ['terrace', 'Terasë', 'Terrace'], ['views', 'Pamje', 'Views']];
+    return {
+      filters: F.map(([k, sq, en]) => ({ label: t(sq, en), pick: () => this.setFilter(k), bg: filter === k ? '#0E1A24' : 'transparent', color: filter === k ? '#F4F1EA' : '#0E1A24' })),
+      items: IMAGES.map(([src, cats, sq, en, ratio], i) => ({ id: i, src: 'img/' + src + '.jpg', alt: t(sq, en), ratio, display: vis.includes(i) ? 'block' : 'none', open: () => this.open(i) })),
+      lbOpen: lb != null, lbRef: this.lbRef, imgRef: this.imgRef,
+      lbSrc: lb != null ? 'img/' + IMAGES[lb][0] + '.jpg' : '', lbAlt: lb != null ? t(IMAGES[lb][2], IMAGES[lb][3]) : '',
+      counter: lb != null ? pad(vis.indexOf(lb) + 1) + ' / ' + pad(vis.length) : '',
+      close: () => this.close(), prev: () => this.step(-1), next: () => this.step(1),
+      touchStart: (e) => (this.tx = e.touches[0].clientX),
+      touchEnd: (e) => { const dx = e.changedTouches[0].clientX - this.tx; if (Math.abs(dx) > 50) this.step(dx < 0 ? 1 : -1); },
+    };
+  }
+}
+</script>
+</body>
+</html>

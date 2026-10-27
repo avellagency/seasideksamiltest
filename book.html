@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+<meta charset="utf-8">
+<title>Rezervo · Seaside Ksamil</title>
+<meta name="description" content="Rezervoni studion në Ksamil direkt, pa komision. Zgjidhni datat, mysafirët dhe konfirmojmë brenda 24 orësh.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://USERNAME.github.io/seaside-ksamil/book.html">
+<meta name="theme-color" content="#0C1820">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Seaside Ksamil">
+<meta property="og:locale" content="sq_AL">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="Rezervo · Seaside Ksamil">
+<meta property="og:description" content="Rezervoni studion në Ksamil direkt, pa komision. Zgjidhni datat, mysafirët dhe konfirmojmë brenda 24 orësh.">
+<meta property="og:url" content="https://USERNAME.github.io/seaside-ksamil/book.html">
+<meta property="og:image" content="https://USERNAME.github.io/seaside-ksamil/img/studio-door.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Rezervo · Seaside Ksamil">
+<meta name="twitter:description" content="Rezervoni studion në Ksamil direkt, pa komision. Zgjidhni datat, mysafirët dhe konfirmojmë brenda 24 orësh.">
+<meta name="twitter:image" content="https://USERNAME.github.io/seaside-ksamil/img/studio-door.jpg">
+<meta name="geo.region" content="AL-12">
+<meta name="geo.placename" content="Ksamil">
+<meta name="geo.position" content="39.7624967;19.9894891">
+<meta name="ICBM" content="39.7624967, 19.9894891">
+<link rel="preload" as="image" href="img/studio-door.jpg">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter+Tight:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/lucide-static@0.454.0/font/lucide.css">
+<style>html,body{margin:0;background:#F4F1EA;color:#0E1A24;-webkit-font-smoothing:antialiased}*{box-sizing:border-box}img{display:block}a{color:#0E1A24}a:hover{color:#0F4C6E}::selection{background:#0F4C6E;color:#F4F1EA}html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!important}input,select,textarea{font:inherit}</style>
+<script src="site.js"></script>
+</helmet>
+<div data-page="book" style="background:#F4F1EA;color:#0E1A24;font-family:'Inter Tight',sans-serif;overflow-x:clip">
+  <dc-import name="Nav" active="book" hint-size="100%,0px"></dc-import>
+
+  <section data-hero data-screen-label="Hero" style="position:relative;height:60svh;min-height:440px;overflow:hidden;border-radius:0 0 24px 24px;color:#F4F1EA">
+    <img data-hero-img src="img/studio-door.jpg" alt="Dera e studios e hapur drejt terasës" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%">
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,24,32,.4) 0%,rgba(12,24,32,.15) 40%,rgba(12,24,32,.78) 100%)"></div>
+    <div style="position:absolute;left:0;right:0;bottom:0;max-width:1440px;margin:0 auto;padding:0 clamp(20px,4vw,56px) clamp(28px,4vw,56px)">
+      <h1 data-split style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(64px,11vw,184px);line-height:.9;letter-spacing:-.03em;margin:0"><span data-en="Book your">Rezervo</span> <em style="color:#C2A273" data-en="stay">qëndrimin</em></h1>
+    </div>
+  </section>
+
+  <section data-screen-label="Booking" style="max-width:1320px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(16px,4vw,56px) clamp(80px,10vw,140px);display:flex;flex-wrap:wrap;gap:24px;align-items:flex-start">
+    <div style="flex:1 1 560px;min-width:0;display:flex;flex-direction:column;gap:20px">
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;font-size:13px;letter-spacing:.06em">
+          <span style="opacity:{{ p1 }};transition:opacity .6s"><b style="font-weight:600;color:#0F4C6E">1</b> <span data-en="Dates">Datat</span></span>
+          <span style="opacity:{{ p2 }};transition:opacity .6s"><b style="font-weight:600;color:#0F4C6E">2</b> <span data-en="Details">Të dhënat</span></span>
+          <span style="opacity:{{ p3 }};transition:opacity .6s"><b style="font-weight:600;color:#0F4C6E">3</b> <span data-en="Confirm">Konfirmimi</span></span>
+        </div>
+        <div style="height:2px;border-radius:2px;background:rgba(14,26,36,.1);overflow:hidden"><div style="height:100%;width:{{ progress }};background:#0F4C6E;transition:width .9s cubic-bezier(.16,1,.3,1)"></div></div>
+      </div>
+
+      <div ref="{{ stepRef }}" style="padding:8px;border-radius:24px;background:#FBF9F4;border:1px solid rgba(0,0,0,.08)">
+        <sc-if value="{{ isStep1 }}" hint-placeholder-val="{{ true }}">
+          <!-- OVDE KASNIJE IDE PRAVI BOOKING (Smoobu) -->
+          <div style="padding:clamp(20px,3vw,32px);border-radius:18px;background:#F4F1EA;display:flex;flex-direction:column;gap:28px">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:16px">
+              <div style="display:flex;flex-direction:column;gap:4px">
+                <span style="font-family:'Instrument Serif',serif;font-size:clamp(30px,3vw,40px);line-height:1" data-en="Choose your dates">Zgjidhni datat</span>
+                <span style="font-size:14px;color:rgba(14,26,36,.65)">{{ hint }}</span>
+              </div>
+              <div style="display:flex;gap:8px">
+                <button onClick="{{ prevMonth }}" disabled="{{ prevDisabled }}" aria-label="Previous month" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(14,26,36,.14);background:#FBF9F4;cursor:pointer;opacity:{{ prevOp }};font-size:16px">←</button>
+                <button onClick="{{ nextMonth }}" aria-label="Next month" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(14,26,36,.14);background:#FBF9F4;cursor:pointer;font-size:16px">→</button>
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(24px,4vw,48px)">
+              <sc-for list="{{ months }}" as="mo" hint-placeholder-count="2">
+                <div style="display:flex;flex-direction:column;gap:12px">
+                  <div style="font-family:'Instrument Serif',serif;font-size:26px">{{ mo.title }}</div>
+                  <div style="display:grid;grid-template-columns:repeat(7,minmax(0,1fr));row-gap:4px">
+                    <sc-for list="{{ weekdays }}" as="w" hint-placeholder-count="7">
+                      <div style="text-align:center;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(14,26,36,.5);padding-bottom:6px">{{ w }}</div>
+                    </sc-for>
+                    <sc-for list="{{ mo.days }}" as="d" hint-placeholder-count="35">
+                      <div style="height:44px;display:grid;place-items:center;background:{{ d.band }}">
+                        <button onClick="{{ d.pick }}" disabled="{{ d.disabled }}" style="width:42px;height:42px;border-radius:50%;border:0;padding:0;background:{{ d.dot }};color:{{ d.color }};text-decoration:{{ d.deco }};cursor:{{ d.cursor }};font-size:15px;font-weight:{{ d.weight }};transition:background .5s cubic-bezier(.16,1,.3,1),color .5s">{{ d.n }}</button>
+                      </div>
+                    </sc-for>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:18px;font-size:13px;color:rgba(14,26,36,.65)">
+              <span style="display:flex;align-items:center;gap:8px"><span style="width:12px;height:12px;border-radius:50%;background:#0F4C6E"></span><span data-en="Selected">Të zgjedhura</span></span>
+              <span style="display:flex;align-items:center;gap:8px"><span style="text-decoration:line-through;color:rgba(14,26,36,.4)">18</span><span data-en="Booked">Të zëna</span></span>
+            </div>
+            <sc-if value="{{ hasMsg }}" hint-placeholder-val="{{ false }}">
+              <div style="padding:14px 18px;border-radius:14px;background:rgba(194,162,115,.18);color:#5E4A26;font-size:14px">{{ msg }}</div>
+            </sc-if>
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:24px;border-top:1px solid rgba(0,0,0,.08)">
+              <div style="display:flex;flex-direction:column;gap:2px"><span style="font-weight:500" data-en="Guests">Mysafirë</span><span style="font-size:13px;color:rgba(14,26,36,.6)">{{ maxGuestsLabel }}</span></div>
+              <div style="display:flex;align-items:center;gap:6px;padding:4px;border-radius:999px;background:#FBF9F4;border:1px solid rgba(0,0,0,.08)">
+                <button onClick="{{ minus }}" aria-label="−" style="width:44px;height:44px;border-radius:50%;border:0;background:#F4F1EA;font-size:20px;cursor:pointer">−</button>
+                <span style="width:36px;text-align:center;font-family:'Instrument Serif',serif;font-size:28px">{{ guests }}</span>
+                <button onClick="{{ plus }}" aria-label="+" style="width:44px;height:44px;border-radius:50%;border:0;background:#0E1A24;color:#F4F1EA;font-size:20px;cursor:pointer">+</button>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isStep2 }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:clamp(20px,3vw,32px);border-radius:18px;background:#F4F1EA;display:flex;flex-direction:column;gap:24px">
+            <span style="font-family:'Instrument Serif',serif;font-size:clamp(30px,3vw,40px);line-height:1" data-en="Your details">Të dhënat tuaja</span>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:16px">
+              <label style="display:flex;flex-direction:column;gap:8px">
+                <span style="font-size:13px;font-weight:500" data-en="Full name">Emri i plotë</span>
+                <input value="{{ f.name }}" onChange="{{ on.name }}" onBlur="{{ blur.name }}" autocomplete="name" style="height:52px;padding:0 16px;border-radius:14px;border:1px solid {{ bd.name }};background:#FBF9F4;color:#0E1A24;outline:none;transition:border-color .4s">
+                <sc-if value="{{ show.name }}"><span style="font-size:12px;color:#A2452E">{{ err.name }}</span></sc-if>
+              </label>
+              <label style="display:flex;flex-direction:column;gap:8px">
+                <span style="font-size:13px;font-weight:500">Email</span>
+                <input type="email" value="{{ f.email }}" onChange="{{ on.email }}" onBlur="{{ blur.email }}" autocomplete="email" style="height:52px;padding:0 16px;border-radius:14px;border:1px solid {{ bd.email }};background:#FBF9F4;color:#0E1A24;outline:none;transition:border-color .4s">
+                <sc-if value="{{ show.email }}"><span style="font-size:12px;color:#A2452E">{{ err.email }}</span></sc-if>
+              </label>
+              <label style="display:flex;flex-direction:column;gap:8px">
+                <span style="font-size:13px;font-weight:500" data-en="Phone / WhatsApp">Telefon / WhatsApp</span>
+                <input type="tel" value="{{ f.phone }}" onChange="{{ on.phone }}" onBlur="{{ blur.phone }}" autocomplete="tel" placeholder="+355" style="height:52px;padding:0 16px;border-radius:14px;border:1px solid {{ bd.phone }};background:#FBF9F4;color:#0E1A24;outline:none;transition:border-color .4s">
+                <sc-if value="{{ show.phone }}"><span style="font-size:12px;color:#A2452E">{{ err.phone }}</span></sc-if>
+              </label>
+              <label style="display:flex;flex-direction:column;gap:8px">
+                <span style="font-size:13px;font-weight:500" data-en="Country">Shteti</span>
+                <select value="{{ f.country }}" onChange="{{ on.country }}" onBlur="{{ blur.country }}" style="height:52px;padding:0 14px;border-radius:14px;border:1px solid {{ bd.country }};background:#FBF9F4;color:#0E1A24;outline:none">
+                  <option value="">—</option>
+                  <sc-for list="{{ countries }}" as="c" hint-placeholder-count="10"><option value="{{ c }}">{{ c }}</option></sc-for>
+                </select>
+                <sc-if value="{{ show.country }}"><span style="font-size:12px;color:#A2452E">{{ err.country }}</span></sc-if>
+              </label>
+              <label style="display:flex;flex-direction:column;gap:8px">
+                <span style="font-size:13px;font-weight:500" data-en="Arrival time">Ora e mbërritjes</span>
+                <select value="{{ f.arrival }}" onChange="{{ on.arrival }}" onBlur="{{ blur.arrival }}" style="height:52px;padding:0 14px;border-radius:14px;border:1px solid {{ bd.arrival }};background:#FBF9F4;color:#0E1A24;outline:none">
+                  <option value="">—</option>
+                  <sc-for list="{{ times }}" as="tm" hint-placeholder-count="16"><option value="{{ tm }}">{{ tm }}</option></sc-for>
+                </select>
+                <sc-if value="{{ show.arrival }}"><span style="font-size:12px;color:#A2452E">{{ err.arrival }}</span></sc-if>
+              </label>
+            </div>
+            <label style="display:flex;flex-direction:column;gap:8px">
+              <span style="font-size:13px;font-weight:500" data-en="Note (optional)">Shënim (opsional)</span>
+              <textarea value="{{ f.note }}" onChange="{{ on.note }}" rows="4" style="padding:14px 16px;border-radius:14px;border:1px solid rgba(14,26,36,.12);background:#FBF9F4;color:#0E1A24;outline:none;resize:vertical"></textarea>
+            </label>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isStep3 }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:clamp(20px,3vw,32px);border-radius:18px;background:#F4F1EA;display:flex;flex-direction:column;gap:24px">
+            <sc-if value="{{ notDone }}">
+              <span style="font-family:'Instrument Serif',serif;font-size:clamp(30px,3vw,40px);line-height:1" data-en="Review your request">Kontrolloni kërkesën</span>
+              <div style="display:flex;flex-direction:column">
+                <sc-for list="{{ summary }}" as="row" hint-placeholder-count="8">
+                  <div style="display:flex;justify-content:space-between;gap:20px;padding:16px 0;border-bottom:1px solid rgba(0,0,0,.08);font-size:15px">
+                    <span style="color:rgba(14,26,36,.6)">{{ row.k }}</span><span style="font-weight:500;text-align:right;overflow-wrap:anywhere">{{ row.v }}</span>
+                  </div>
+                </sc-for>
+              </div>
+              <span style="font-size:13px;color:rgba(14,26,36,.6)" data-en="No payment now. We confirm availability first.">Asnjë pagesë tani. Fillimisht konfirmojmë disponueshmërinë.</span>
+            </sc-if>
+            <sc-if value="{{ done }}">
+              <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px;padding:40px 0">
+                <svg width="96" height="96" viewBox="0 0 80 80" aria-hidden="true"><circle data-check-c="" cx="40" cy="40" r="36" fill="none" stroke="#0F4C6E" stroke-width="2" stroke-dasharray="227" stroke-dashoffset="0"></circle><path data-check-p="" d="M25 41 L35 51 L56 29" fill="none" stroke="#C2A273" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="50" stroke-dashoffset="0"></path></svg>
+                <span style="font-family:'Instrument Serif',serif;font-size:clamp(36px,4vw,56px);line-height:1" data-en="Request received!">Kërkesa u pranua!</span>
+                <span style="font-size:16px;color:rgba(14,26,36,.7);max-width:36ch" data-en="We'll confirm within 24h.">Do t'ju konfirmojmë brenda 24 orësh.</span>
+              </div>
+            </sc-if>
+          </div>
+        </sc-if>
+      </div>
+
+      <sc-if value="{{ notDone }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+          <sc-if value="{{ canBack }}" hint-placeholder-val="{{ false }}">
+            <button onClick="{{ back }}" style="height:56px;padding:0 24px;border-radius:999px;border:1px solid rgba(14,26,36,.16);background:none;color:#0E1A24;font-weight:500;font-size:15px;cursor:pointer">← <span data-en="Back">Kthehu</span></button>
+          </sc-if>
+          <span></span>
+          <button onClick="{{ next }}" data-magnetic style="position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:14px;padding:6px 6px 6px 26px;border-radius:999px;border:0;background:#0E1A24;color:#F4F1EA;font-size:15px;font-weight:500;cursor:pointer;opacity:{{ nextOp }};transition:opacity .4s">{{ nextLabel }}<span data-arrow style="width:44px;height:44px;border-radius:50%;background:#C2A273;color:#0E1A24;display:grid;place-items:center;overflow:hidden"><span>→</span></span><span data-shine style="position:absolute;top:0;bottom:0;left:-70%;width:50%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.28),transparent);pointer-events:none"></span></button>
+        </div>
+      </sc-if>
+    </div>
+
+    <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
+      <aside style="flex:0 1 380px;position:sticky;top:110px;padding:8px;border-radius:24px;background:#0C1820;color:#F4F1EA;display:flex;flex-direction:column;gap:8px">
+        <div style="position:relative;aspect-ratio:16/10;border-radius:18px;overflow:hidden"><img src="img/studio-wide.jpg" alt="Studioja" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div>
+        <div style="padding:20px 18px 8px;display:flex;flex-direction:column;gap:4px">
+          <span style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#C2A273" data-en="Your stay">Qëndrimi juaj</span>
+          <span style="font-family:'Instrument Serif',serif;font-size:32px;line-height:1">Seaside Ksamil Studio</span>
+        </div>
+        <div style="padding:0 18px;display:flex;flex-direction:column;font-size:14px">
+          <div style="display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid rgba(244,241,234,.1)"><span style="color:rgba(244,241,234,.6)" data-en="Dates">Datat</span><span>{{ datesLabel }}</span></div>
+          <div style="display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid rgba(244,241,234,.1)"><span style="color:rgba(244,241,234,.6)" data-en="Guests">Mysafirë</span><span>{{ guests }}</span></div>
+          <div style="display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid rgba(244,241,234,.1)"><span style="color:rgba(244,241,234,.6)">{{ nightsLine }}</span><span>{{ nightsCost }}</span></div>
+          <div style="display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid rgba(244,241,234,.1)"><span style="color:rgba(244,241,234,.6)" data-en="Cleaning fee">Pastrimi</span><span>{{ cleaning }}</span></div>
+        </div>
+        <div style="margin-top:4px;padding:18px;border-radius:18px;background:rgba(244,241,234,.06);display:flex;justify-content:space-between;align-items:baseline">
+          <span data-en="Total">Totali</span><span style="font-family:'Instrument Serif',serif;font-size:44px;line-height:1;font-variant-numeric:tabular-nums">{{ total }}</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;font-size:13px;color:rgba(244,241,234,.8)">
+          <span style="padding:12px 14px;border-radius:14px;background:rgba(244,241,234,.04);display:flex;align-items:center;gap:8px"><i class="icon-car" style="color:#C2A273"></i><span data-en="Free parking">Parkim falas</span></span>
+          <span style="padding:12px 14px;border-radius:14px;background:rgba(244,241,234,.04);display:flex;align-items:center;gap:8px"><i class="icon-wifi" style="color:#C2A273"></i>Wi-Fi</span>
+          <span style="padding:12px 14px;border-radius:14px;background:rgba(244,241,234,.04);display:flex;align-items:center;gap:8px"><i class="icon-waves" style="color:#C2A273"></i><span data-en="Sea view">Pamje nga deti</span></span>
+          <span style="padding:12px 14px;border-radius:14px;background:rgba(244,241,234,.04);display:flex;align-items:center;gap:8px"><i class="icon-clock" style="color:#C2A273"></i>15:00–22:30</span>
+        </div>
+      </aside>
+    </sc-if>
+  </section>
+
+  <section data-screen-label="Talk" style="max-width:1320px;margin:0 auto;padding:0 clamp(16px,4vw,56px) clamp(120px,14vw,200px)">
+    <div data-reveal style="padding:clamp(32px,5vw,64px);border-radius:24px;background:#FBF9F4;border:1px solid rgba(0,0,0,.08);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:28px">
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <span style="font-family:'Instrument Serif',serif;font-size:clamp(40px,5vw,72px);line-height:1"><span data-en="Prefer to">Preferoni të</span> <em style="color:#0F4C6E" data-en="talk?">flisni?</em></span>
+        <span style="color:rgba(14,26,36,.65)">+355 69 252 2014</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px">
+        <a href="https://wa.me/355692522014" target="_blank" data-magnetic style="display:inline-flex;align-items:center;gap:10px;height:58px;padding:0 26px;border-radius:999px;background:#0E1A24;color:#F4F1EA;font-weight:500;text-decoration:none"><i class="icon-message-circle"></i>WhatsApp</a>
+        <a href="viber://chat?number=%2B355692522014" data-magnetic style="display:inline-flex;align-items:center;gap:10px;height:58px;padding:0 26px;border-radius:999px;border:1px solid rgba(14,26,36,.16);color:#0E1A24;font-weight:500;text-decoration:none"><i class="icon-phone"></i>Viber</a>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="Footer" hint-size="100%,700px"></dc-import>
+
+  <sc-if value="{{ mobileBar }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;left:8px;right:8px;bottom:8px;z-index:70;padding:8px;border-radius:24px;background:#0C1820;color:#F4F1EA;box-shadow:0 20px 50px rgba(12,24,32,.3);display:flex;flex-direction:column;gap:8px">
+      <sc-if value="{{ sheet }}">
+        <div style="padding:8px 12px 0;display:flex;flex-direction:column;font-size:14px">
+          <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(244,241,234,.1)"><span style="color:rgba(244,241,234,.6)" data-en="Dates">Datat</span><span>{{ datesLabel }}</span></div>
+          <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(244,241,234,.1)"><span style="color:rgba(244,241,234,.6)" data-en="Guests">Mysafirë</span><span>{{ guests }}</span></div>
+          <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(244,241,234,.1)"><span style="color:rgba(244,241,234,.6)">{{ nightsLine }}</span><span>{{ nightsCost }}</span></div>
+          <div style="display:flex;justify-content:space-between;padding:10px 0"><span style="color:rgba(244,241,234,.6)" data-en="Cleaning fee">Pastrimi</span><span>{{ cleaning }}</span></div>
+        </div>
+      </sc-if>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+        <button onClick="{{ toggleSheet }}" style="flex:1;display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding:6px 12px;border:0;background:none;color:#F4F1EA;cursor:pointer;text-align:left">
+          <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#C2A273"><span data-en="Total">Totali</span> {{ sheetArrow }}</span>
+          <span style="font-family:'Instrument Serif',serif;font-size:30px;line-height:1">{{ total }}</span>
+        </button>
+        <button onClick="{{ next }}" style="height:52px;padding:0 24px;border-radius:999px;border:0;background:#C2A273;color:#0E1A24;font-weight:600;font-size:15px;cursor:pointer;opacity:{{ nextOp }}">{{ nextLabelShort }}</button>
+      </div>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+// Booking settings – edit here.
+const PRICE_PER_NIGHT = 150;
+const CLEANING_FEE = 40;
+const MIN_NIGHTS = 2;
+const MAX_GUESTS = 3;
+const BOOKED_DATES = ['2026-10-30', '2026-10-31', '2026-11-01', '2026-11-13', '2026-11-14', '2026-11-20', '2026-11-21', '2026-11-22', '2026-12-05', '2026-12-06', '2026-12-24', '2026-12-25', '2026-12-26', '2026-12-31', '2027-01-01'];
+
+const EN = (localStorage.getItem('ss-lang') || 'sq') === 'en';
+const L = EN ? {
+  months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+  wd: ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'],
+  pickIn: 'Select your arrival date', pickOut: 'Now select your departure date', picked: (n) => n + ' nights selected',
+  min: `Minimum stay is ${MIN_NIGHTS} nights.`, blocked: 'Some dates in this range are already booked.',
+  night: (n) => (n === 1 ? 'night' : 'nights'), cont: 'Continue', req: 'Request booking', select: 'Select dates', upTo: `up to ${MAX_GUESTS}`,
+  err: { name: 'Please enter your full name', email: 'Enter a valid email', phone: 'Enter a valid phone number', country: 'Select your country', arrival: 'Select an arrival time' },
+  rows: ['Check-in', 'Check-out', 'Nights', 'Guests', 'Name', 'Email', 'Phone', 'Country', 'Arrival', 'Note', 'Total'],
+  countries: ['Albania', 'Kosovo', 'North Macedonia', 'Montenegro', 'Serbia', 'Greece', 'Italy', 'Germany', 'United Kingdom', 'France', 'Poland', 'USA', 'Other'],
+} : {
+  months: ['Janar', 'Shkurt', 'Mars', 'Prill', 'Maj', 'Qershor', 'Korrik', 'Gusht', 'Shtator', 'Tetor', 'Nëntor', 'Dhjetor'],
+  wd: ['Hë', 'Ma', 'Më', 'En', 'Pr', 'Sh', 'Di'],
+  pickIn: 'Zgjidhni datën e mbërritjes', pickOut: 'Tani zgjidhni datën e largimit', picked: (n) => n + ' netë të zgjedhura',
+  min: `Qëndrimi minimal është ${MIN_NIGHTS} netë.`, blocked: 'Disa data në këtë periudhë janë të zëna.',
+  night: (n) => (n === 1 ? 'natë' : 'netë'), cont: 'Vazhdo', req: 'Kërko rezervimin', select: 'Zgjidhni datat', upTo: `deri në ${MAX_GUESTS}`,
+  err: { name: 'Shkruani emrin e plotë', email: 'Shkruani një email të vlefshëm', phone: 'Shkruani një numër të vlefshëm', country: 'Zgjidhni shtetin', arrival: 'Zgjidhni orën e mbërritjes' },
+  rows: ['Mbërritja', 'Largimi', 'Netë', 'Mysafirë', 'Emri', 'Email', 'Telefoni', 'Shteti', 'Ora e mbërritjes', 'Shënim', 'Totali'],
+  countries: ['Shqipëri', 'Kosovë', 'Maqedoni e Veriut', 'Mal i Zi', 'Serbi', 'Greqi', 'Itali', 'Gjermani', 'Mbretëri e Bashkuar', 'Francë', 'Poloni', 'SHBA', 'Tjetër'],
+};
+const BOOKED = new Set(BOOKED_DATES);
+const pad = (n) => String(n).padStart(2, '0');
+const iso = (d) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+const parse = (s) => { const [y, m, d] = s.split('-').map(Number); return new Date(y, m - 1, d); };
+const TODAY = iso(new Date());
+const diff = (a, b) => Math.round((parse(b) - parse(a)) / 864e5);
+const fmt = (s) => { const d = parse(s); return d.getDate() + ' ' + L.months[d.getMonth()].slice(0, 3); };
+const eur = (n) => Math.round(n).toLocaleString('de-DE') + ' €';
+const TIMES = []; for (let m = 15 * 60; m <= 22 * 60 + 30; m += 30) TIMES.push(pad(Math.floor(m / 60)) + ':' + pad(m % 60));
+const rangeFree = (a, b) => { for (let d = parse(a); iso(d) < b; d.setDate(d.getDate() + 1)) if (BOOKED.has(iso(d))) return false; return true; };
+console.assert(diff('2026-12-30', '2027-01-02') === 3 && !rangeFree('2026-12-23', '2026-12-27') && rangeFree('2026-12-26', '2026-12-28') === false && rangeFree('2026-12-27', '2026-12-30'), 'booking date helpers');
+
+class Component extends DCLogic {
+  state = {
+    step: 1, view: (() => { const d = new Date(); return new Date(d.getFullYear(), d.getMonth(), 1); })(),
+    ci: null, co: null, guests: 2, msg: '', done: false, desktop: window.innerWidth >= 900, sheet: false,
+    f: { name: '', email: '', phone: '', country: '', arrival: '', note: '' }, touched: {}, disp: 0,
+  };
+  stepRef = React.createRef();
+  componentDidMount() {
+    const q = new URLSearchParams(location.search), ok = (s) => /^\d{4}-\d{2}-\d{2}$/.test(s || '') && s >= TODAY;
+    const ci = q.get('checkin'), co = q.get('checkout'), g = +q.get('guests');
+    const s = {};
+    if (ok(ci)) { s.ci = ci; const d = parse(ci); s.view = new Date(d.getFullYear(), d.getMonth(), 1); if (ok(co) && co > ci && rangeFree(ci, co)) s.co = co; }
+    if (g >= 1) s.guests = Math.min(MAX_GUESTS, g);
+    if (s.co && diff(s.ci, s.co) < MIN_NIGHTS) s.msg = L.min;
+    this.setState(s);
+    this.onR = () => this.setState({ desktop: window.innerWidth >= 900 });
+    window.addEventListener('resize', this.onR);
+  }
+  componentWillUnmount() { window.removeEventListener('resize', this.onR); cancelAnimationFrame(this.raf); }
+  componentDidUpdate(_, p) {
+    const target = this.calc().total;
+    if (target !== this.target) { this.target = target; this.tween(target); }
+    if (this.state.done && !p.done && window.gsap) {
+      gsap.fromTo('[data-check-c]', { strokeDashoffset: 227 }, { strokeDashoffset: 0, duration: 1.2, ease: 'expo.out' });
+      gsap.fromTo('[data-check-p]', { strokeDashoffset: 50 }, { strokeDashoffset: 0, duration: 0.9, delay: 0.5, ease: 'power3.out' });
+    }
+  }
+  tween(to) {
+    cancelAnimationFrame(this.raf);
+    const from = this.state.disp, t0 = performance.now(), D = 900;
+    const f = (now) => { const k = Math.min(1, (now - t0) / D), e = 1 - Math.pow(1 - k, 3); this.setState({ disp: from + (to - from) * e }); if (k < 1) this.raf = requestAnimationFrame(f); };
+    this.raf = requestAnimationFrame(f);
+  }
+  calc() {
+    const { ci, co } = this.state, nights = ci && co ? diff(ci, co) : 0;
+    return { nights, cost: nights * PRICE_PER_NIGHT, total: nights >= MIN_NIGHTS ? nights * PRICE_PER_NIGHT + CLEANING_FEE : 0 };
+  }
+  errors() {
+    const f = this.state.f, e = {};
+    if (f.name.trim().length < 2) e.name = L.err.name;
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(f.email.trim())) e.email = L.err.email;
+    if (f.phone.replace(/\D/g, '').length < 7) e.phone = L.err.phone;
+    if (!f.country) e.country = L.err.country;
+    if (!f.arrival) e.arrival = L.err.arrival;
+    return e;
+  }
+  pick(d) {
+    const { ci, co } = this.state;
+    if (!ci || co || d <= ci) return this.setState({ ci: d, co: null, msg: '' });
+    if (!rangeFree(ci, d)) return this.setState({ ci: d, co: null, msg: L.blocked });
+    this.setState({ co: d, msg: diff(ci, d) < MIN_NIGHTS ? L.min : '' });
+  }
+  go(step) {
+    const dir = step > this.state.step ? 1 : -1;
+    this.setState({ step, sheet: false }, () => {
+      const el = this.stepRef.current;
+      if (window.gsap && el) gsap.fromTo(el, { x: 40 * dir, opacity: 0 }, { x: 0, opacity: 1, duration: 0.8, ease: 'power3.out' });
+      const SS = window.SS, top = el ? el.getBoundingClientRect().top + window.scrollY - 140 : 0;
+      SS && SS.lenis ? SS.lenis.scrollTo(top, { duration: 1.2 }) : window.scrollTo({ top, behavior: 'smooth' });
+    });
+  }
+  next() {
+    const { step } = this.state, { nights } = this.calc();
+    if (step === 1) { if (nights < MIN_NIGHTS) return this.setState({ msg: this.state.ci && this.state.co ? L.min : L.pickIn }); return this.go(2); }
+    if (step === 2) { if (Object.keys(this.errors()).length) return this.setState({ touched: { name: 1, email: 1, phone: 1, country: 1, arrival: 1 } }); return this.go(3); }
+    if (step === 3) this.setState({ done: true }); // visual only – nothing is sent
+  }
+  month(base) {
+    const y = base.getFullYear(), m = base.getMonth(), { ci, co } = this.state;
+    const blanks = (new Date(y, m, 1).getDay() + 6) % 7, count = new Date(y, m + 1, 0).getDate(), days = [];
+    for (let i = 0; i < blanks; i++) days.push({ n: '', disabled: true, band: 'transparent', dot: 'transparent', color: 'transparent', deco: 'none', cursor: 'default', weight: 400 });
+    const BAND = 'rgba(15,76,110,.12)';
+    for (let n = 1; n <= count; n++) {
+      const d = `${y}-${pad(m + 1)}-${pad(n)}`, past = d < TODAY, booked = BOOKED.has(d), sel = d === ci || d === co, inR = ci && co && d > ci && d < co;
+      days.push({
+        n, disabled: past || booked, pick: () => this.pick(d),
+        band: inR ? BAND : d === ci && co ? `linear-gradient(90deg,transparent 50%,${BAND} 50%)` : d === co ? `linear-gradient(90deg,${BAND} 50%,transparent 50%)` : 'transparent',
+        dot: sel ? '#0F4C6E' : 'transparent', color: sel ? '#F4F1EA' : past || booked ? 'rgba(14,26,36,.28)' : '#0E1A24',
+        deco: booked ? 'line-through' : 'none', cursor: past || booked ? 'not-allowed' : 'pointer', weight: sel ? 600 : 400,
+      });
+    }
+    return { title: L.months[m] + ' ' + y, days };
+  }
+  renderVals() {
+    const s = this.state, { nights, cost } = this.calc(), err = this.errors();
+    const shift = (k) => this.setState((st) => ({ view: new Date(st.view.getFullYear(), st.view.getMonth() + k, 1) }));
+    const atStart = s.view.getFullYear() === new Date().getFullYear() && s.view.getMonth() === new Date().getMonth();
+    const months = [this.month(s.view)];
+    if (s.desktop) months.push(this.month(new Date(s.view.getFullYear(), s.view.getMonth() + 1, 1)));
+    const keys = ['name', 'email', 'phone', 'country', 'arrival', 'note'], obj = (fn) => Object.fromEntries(keys.map((k) => [k, fn(k)]));
+    const show = obj((k) => !!(s.touched[k] && err[k]));
+    const canNext = s.step === 1 ? nights >= MIN_NIGHTS : s.step === 2 ? !Object.keys(err).length : true;
+    const nl = s.step === 3 ? L.req : L.cont;
+    return {
+      isStep1: s.step === 1, isStep2: s.step === 2, isStep3: s.step === 3, done: s.done, notDone: !s.done, canBack: s.step > 1 && !s.done,
+      p1: 1, p2: s.step >= 2 ? 1 : 0.4, p3: s.step >= 3 ? 1 : 0.4, progress: s.done ? '100%' : ((s.step - 0.5) / 3) * 100 + '%',
+      stepRef: this.stepRef, months, weekdays: L.wd,
+      hint: !s.ci ? L.pickIn : !s.co ? L.pickOut : L.picked(nights),
+      prevMonth: () => !atStart && shift(-1), nextMonth: () => shift(1), prevDisabled: atStart, prevOp: atStart ? 0.35 : 1,
+      hasMsg: !!s.msg, msg: s.msg, guests: s.guests, maxGuestsLabel: L.upTo,
+      minus: () => this.setState((st) => ({ guests: Math.max(1, st.guests - 1) })), plus: () => this.setState((st) => ({ guests: Math.min(MAX_GUESTS, st.guests + 1) })),
+      f: s.f, show, err, countries: L.countries, times: TIMES,
+      bd: obj((k) => (show[k] ? 'rgba(162,69,46,.6)' : s.touched[k] && !err[k] ? 'rgba(15,76,110,.45)' : 'rgba(14,26,36,.12)')),
+      on: obj((k) => (e) => { const v = e.target.value; this.setState((st) => ({ f: { ...st.f, [k]: v } })); }),
+      blur: obj((k) => () => this.setState((st) => ({ touched: { ...st.touched, [k]: 1 } }))),
+      summary: [
+        [L.rows[0], s.ci ? fmt(s.ci) : '—'], [L.rows[1], s.co ? fmt(s.co) : '—'], [L.rows[2], String(nights)], [L.rows[3], String(s.guests)],
+        [L.rows[4], s.f.name], [L.rows[5], s.f.email], [L.rows[6], s.f.phone], [L.rows[7], s.f.country], [L.rows[8], s.f.arrival],
+        [L.rows[9], s.f.note || '—'], [L.rows[10], eur(this.calc().total)],
+      ].map(([k, v]) => ({ k, v })),
+      next: () => this.next(), back: () => this.go(s.step - 1), nextLabel: nl, nextLabelShort: nl, nextOp: canNext ? 1 : 0.55,
+      desktop: s.desktop, mobileBar: !s.desktop && !s.done, sheet: s.sheet, sheetArrow: s.sheet ? '↓' : '↑', toggleSheet: () => this.setState((st) => ({ sheet: !st.sheet })),
+      datesLabel: s.ci ? fmt(s.ci) + ' → ' + (s.co ? fmt(s.co) : '…') : L.select,
+      nightsLine: (nights || 0) + ' ' + L.night(nights) + ' × ' + PRICE_PER_NIGHT + ' €', nightsCost: eur(cost),
+      cleaning: nights >= MIN_NIGHTS ? eur(CLEANING_FEE) : '—', total: eur(s.disp),
+    };
+  }
+}
+</script>
+</body>
+</html>
